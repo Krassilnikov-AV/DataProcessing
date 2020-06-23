@@ -4,13 +4,13 @@ package poi.main;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import poi.createFiles.Create;
+import poi.createFiles.CreateExcelFiles;
 
 public class Main {
 
      public static void main(String[] args) throws FileNotFoundException, IOException {
      
-         Create cf = new Create();
+         CreateExcelFiles cf = new CreateExcelFiles();
          cf.create();
     }
     

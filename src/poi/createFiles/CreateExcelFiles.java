@@ -10,7 +10,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.WorkbookUtil;
 
-public class Create {
+public class CreateExcelFiles {
 
     public void create() throws FileNotFoundException, IOException {
         // создание экземпляра книг
