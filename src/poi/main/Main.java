@@ -2,6 +2,7 @@ package poi.main;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import poi.createFiles.CreateContact;
 
 import poi.createFiles.CreateExcelFiles;
 import poi.readExcel.ReadExcelFiles;
@@ -16,9 +17,11 @@ public class Main {
 //         cfauto.createAuto();
 //        CreateExcelFiles cfauto = new CreateExcelFiles();
 //        cfauto.createDictionary();
+        CreateContact cp = new CreateContact();
+        cp.createPersonFile();
         System.out.println("file content:");
 // file created
-         ReadExcelFiles rf = new ReadExcelFiles();
-         rf.readFiles();
+        ReadExcelFiles rf = new ReadExcelFiles();
+        rf.readFiles();
     }
 }
