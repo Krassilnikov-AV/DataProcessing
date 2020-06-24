@@ -32,7 +32,7 @@ public class CreateExcelFiles {
         wb.write(fos);
         fos.close();
     }
-    
+    // создание файла для работы с техсостоянием и ремонтом авто
      public void createAuto() throws FileNotFoundException, IOException {
         // создание экземпляра книг
         Workbook wbAuto = new HSSFWorkbook();
@@ -41,5 +41,15 @@ public class CreateExcelFiles {
         FileOutputStream fosAuto = new FileOutputStream("WorkOnTheCar.xls");
         wbAuto.write(fosAuto);
         fosAuto.close();
+    }
+     // создание файла для работы с английским текстом dictionary 
+       public void createDictionary() throws FileNotFoundException, IOException {
+        // создание экземпляра книг
+        Workbook wbDic = new HSSFWorkbook();
+        Sheet sheet = wbDic.createSheet("AN-RUS");  
+    
+        FileOutputStream fos = new FileOutputStream("EngRusDict.xls");
+        wbDic.write(fos);
+        fos.close();
     }
 }
