@@ -15,7 +15,7 @@ public class ReadExcelFiles {
     String result;
     
     public void readFiles() throws FileNotFoundException, IOException {
-    nameFile = "D:/LEARNING/JAVA_DEVELOP/MyProject/Repositories/ApplicExcelPars/test.xls";
+    nameFile = "WorkOnTheCar.xls";
         fis = new FileInputStream(nameFile);
  //       fis = new FileInputStream("WorkOnTheCar.xlsx");
         wb = new HSSFWorkbook(fis);

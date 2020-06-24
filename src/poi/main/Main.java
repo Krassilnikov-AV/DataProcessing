@@ -14,9 +14,10 @@ public class Main {
 //         CreateExcelFiles cf = new CreateExcelFiles();
 //         cf.createTest();
          
-         CreateExcelFiles cfauto = new CreateExcelFiles();
-         cfauto.createAuto();
-//         ReadExcelFiles rf = new ReadExcelFiles();
-//         rf.readFiles();
+//         CreateExcelFiles cfauto = new CreateExcelFiles();
+//         cfauto.createAuto();
+// file created
+         ReadExcelFiles rf = new ReadExcelFiles();
+         rf.readFiles();
     }    
 }
