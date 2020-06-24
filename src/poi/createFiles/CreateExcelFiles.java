@@ -12,7 +12,7 @@ import org.apache.poi.ss.util.WorkbookUtil;
 
 public class CreateExcelFiles {
 
-    public void create() throws FileNotFoundException, IOException {
+    public void createTest() throws FileNotFoundException, IOException {
         // создание экземпляра книг
         Workbook wb = new HSSFWorkbook();
         Sheet sheet = wb.createSheet("List");  // 
@@ -23,14 +23,24 @@ public class CreateExcelFiles {
         cell.setCellValue("cell");
 // создание листа с белебердой через класс WorkbookUtil
         Sheet sheet1 = wb.createSheet(WorkbookUtil.createSafeSheetName("!%^&@^$@^"));  // 
-        
+
         Row row1 = sheet1.createRow(1);
         Cell cell1 = row1.createCell(2);
         cell1.setCellValue("Ok!");
-        
-        FileOutputStream fos = new FileOutputStream("test.xls");  // создание файла для записи книги
 
+        FileOutputStream fos = new FileOutputStream("test.xls");  // создание файла для записи книги
         wb.write(fos);
         fos.close();
+    }
+    
+     public void createAuto() throws FileNotFoundException, IOException {
+        // создание экземпляра книг
+        Workbook wbAuto = new HSSFWorkbook();
+        Sheet sheet = wbAuto.createSheet("List");  
+    
+        FileOutputStream fosAuto = new FileOutputStream("WorkOnTheCar.xls");
+        wbAuto.write(fosAuto);
+        fosAuto.close();
+
     }
 }

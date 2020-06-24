@@ -5,13 +5,18 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import poi.createFiles.CreateExcelFiles;
+import poi.readExcel.ReadExcelFiles;
 
 public class Main {
 
      public static void main(String[] args) throws FileNotFoundException, IOException {
      
-         CreateExcelFiles cf = new CreateExcelFiles();
-         cf.create();
-    }
-    
+//         CreateExcelFiles cf = new CreateExcelFiles();
+//         cf.createTest();
+         
+         CreateExcelFiles cfauto = new CreateExcelFiles();
+         cfauto.createAuto();
+//         ReadExcelFiles rf = new ReadExcelFiles();
+//         rf.readFiles();
+    }    
 }
