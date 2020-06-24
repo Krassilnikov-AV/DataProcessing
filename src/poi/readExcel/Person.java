@@ -47,15 +47,15 @@ public class Person {
     public static final int ADDRESS_COLUMN_NUMBER = 1; //Адрес
     public static final int PHONE_COLUMN_NUMBER = 2; //Телефон
     
-    String path = "ContactPerson.xls";
+   // String path = "ContactPerson.xls";
 
     public List<Person> getContacts(String path) throws IOException {
         List<Person> contacts = new ArrayList<Person>(); //Создаём пустой список контактов
 
-  //      File addressDB = new File(path); //Переменная path содержит путь к документу в ФС
-       FileInputStream fis;
-          fis = new FileInputStream(path);
-        POIFSFileSystem fileSystem = new POIFSFileSystem(fis); //Открываем документ
+       File addressDB = new File(path); //Переменная path содержит путь к документу в ФС
+//       FileInputStream fis;
+//          fis = new FileInputStream(path);
+        POIFSFileSystem fileSystem = new POIFSFileSystem(new FileInputStream(addressDB)); //Открываем документ
         HSSFWorkbook workBook = new HSSFWorkbook(fileSystem); // Получаем workbook
         HSSFSheet sheet = workBook.getSheetAt(0); // Проверяем только первую страницу
 
