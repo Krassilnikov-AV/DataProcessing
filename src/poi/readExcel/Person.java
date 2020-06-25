@@ -46,13 +46,65 @@ public class Person {
     public static final int NAME_COLUMN_NUMBER = 0; //ФИО
     public static final int ADDRESS_COLUMN_NUMBER = 1; //Адрес
     public static final int PHONE_COLUMN_NUMBER = 2; //Телефон
-    
-   // String path = "ContactPerson.xls";
 
-    public List<Person> getContacts(String path) throws IOException {
+    String path = "ContactPerson.xls";
+
+//    public List<Person> getContacts(String path) throws IOException {
+//        List<Person> contacts = new ArrayList<Person>(); //Создаём пустой список контактов
+//
+//       File addressDB = new File(path); //Переменная path содержит путь к документу в ФС
+////       FileInputStream fis;
+////          fis = new FileInputStream(path);
+//        POIFSFileSystem fileSystem = new POIFSFileSystem(new FileInputStream(addressDB)); //Открываем документ
+//        HSSFWorkbook workBook = new HSSFWorkbook(fileSystem); // Получаем workbook
+//        HSSFSheet sheet = workBook.getSheetAt(0); // Проверяем только первую страницу
+//
+//        Iterator<Row> rows = sheet.rowIterator(); // Перебираем все строки
+//
+//        // Пропускаем "шапку" таблицы
+//        if (rows.hasNext()) {
+//            rows.next();
+//        }
+//
+//        // Перебираем все строки начиная со второй до тех пор, пока документ не закончится 
+//        while (rows.hasNext()) {
+//            HSSFRow row = (HSSFRow) rows.next();
+//            //Получаем ячейки из строки по номерам столбцов
+//            HSSFCell nameCell = row.getCell(NAME_COLUMN_NUMBER); //ФИО
+//            HSSFCell addressCell = row.getCell(ADDRESS_COLUMN_NUMBER); //Адрес
+//            HSSFCell phoneCell = row.getCell(PHONE_COLUMN_NUMBER); //Номер телефона
+//            // Если в первом столбце нет данных, то контакт не создаём 
+//            if (nameCell != null) {
+//                Person person = new Person();
+//                person.setName(nameCell.getStringCellValue()); //Получаем строковое значение из ячейки
+//
+//                person.setAddress(""); //Адрес может не быть задан
+//                if (addressCell != null && !"".equals(addressCell.getStringCellValue())) {
+//                    person.setAddress(addressCell.getStringCellValue()); //Адрес - строка
+//                }
+//
+//                person.setPhoneNumber(""); //Телефон тоже может не быть задан
+//                if (phoneCell != null && !"".equals(phoneCell.getStringCellValue())) {
+//                    person.setPhoneNumber(phoneCell.getStringCellValue()); // Телефон - тоже строка
+//                }
+//
+//                contacts.add(person); //Добавляем контакт в список
+//            }
+//        }
+//        return contacts;
+//    }
+    public void print() {
+        List<Person> contacts = new ArrayList<Person>();
+        Object[] myContacts = contacts.toArray();
+        for (Object myContact : myContacts) {
+            System.out.println(myContact);
+        }
+    }
+
+    public void getContacts() throws IOException {
         List<Person> contacts = new ArrayList<Person>(); //Создаём пустой список контактов
 
-       File addressDB = new File(path); //Переменная path содержит путь к документу в ФС
+        File addressDB = new File(path); //Переменная path содержит путь к документу в ФС
 //       FileInputStream fis;
 //          fis = new FileInputStream(path);
         POIFSFileSystem fileSystem = new POIFSFileSystem(new FileInputStream(addressDB)); //Открываем документ
@@ -91,7 +143,27 @@ public class Person {
                 contacts.add(person); //Добавляем контакт в список
             }
         }
-        return contacts;
-    }
+//        
+//        Object[] myArray = contacts.toArray();
+//
+//        for (Object myObject : myArray) {
+//
+//            System.out.println(myObject.toString());
+//
+//        }
+        for(Person person : contacts){
+          
+            System.out.println(person);
+        }
+      //  String value = contacts.toString();
+//        Person[] myArr = new Person[contacts.size()];
+//        for (int i = 0; i < contacts.size(); i++) {
+//            myArr[i] = contacts.get(i);
+//        }
+//        for (Person my : myArr) {
+//            System.out.println(my);
+//        }
 
+ //       System.out.println(contacts);
+    }
 }

@@ -24,10 +24,9 @@ public class Main {
 //        ReadExcelFiles rf = new ReadExcelFiles();
 //        rf.readFiles();
 
-        String path = "D:/LEARNING/JAVA_DEVELOP/MyProject/Repositories/ApplicExcelPars/ContactPerson.xls";
-        //String path = "ContactPerson.xls";
+    
         Person pers = new Person();
-        pers.getContacts(path);
+        pers.getContacts();
 
     }
 }
