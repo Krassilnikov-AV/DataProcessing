@@ -17,16 +17,15 @@ public class Main {
 //         cfauto.createAuto();
 //        CreateExcelFiles cfauto = new CreateExcelFiles();
 //        cfauto.createDictionary();
-//        CreateContact cp = new CreateContact();
-//        cp.createPersonFile();
+        CreateContact cp = new CreateContact();
+        cp.createPersonFile();
         System.out.println("file content:");
 // file created
+
 //        ReadExcelFiles rf = new ReadExcelFiles();
 //        rf.readFiles();
 
-    
-        Person pers = new Person();
-        pers.getContacts();
-
+//        Person pers = new Person();
+//        pers.getContacts();
     }
 }
